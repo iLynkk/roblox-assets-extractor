@@ -3,7 +3,7 @@ import re
 import shutil
 import requests
 
-home_directory = os.path.expanduser('~')
+home_directory = r"C:\Users\YOUR_COMPUTER_NAME\"
 roblox_cache_path = os.path.join(home_directory, 'AppData', 'Local', 'Temp', 'Roblox', 'http')
 roblox_sounds_cache_path = os.path.join(home_directory, 'AppData', 'Local', 'Temp', 'Roblox', 'sounds')
 extracted_assets_output_path = os.path.join(home_directory, 'YOUR_OUTPUT_PATH_FOR_EXTRACTED_ASSETS')
