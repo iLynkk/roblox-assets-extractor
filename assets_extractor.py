@@ -35,13 +35,15 @@ for filename in os.listdir(roblox_cache_path):
 
                 content_checksum = hashlib.md5(response.content).hexdigest()
 
-                if "<roblox!" in linked_file_content or "IHDR" in linked_file_content and not content_checksum in already_extracted_assets:
+                if not content_checksum in already_extracted_assets:
                     if "<roblox!" in linked_file_content:
                         file_extension = ".rbxm"
                         print("Extracted RBXM file.")
                     elif "IHDR" in linked_file_content:
                         file_extension = ".png"
                         print("Extracted PNG file.")
+                    else:
+                        continue
 
                     with open(os.path.join(extracted_assets_output_path, f"{filename}{file_extension}"), "wb") as save_file:
                         already_extracted_assets.append(content_checksum)
@@ -58,16 +60,15 @@ for filename in os.listdir(roblox_sounds_cache_path):
         with open(file_path, "r", encoding="latin-1", errors="ignore") as file:
             file_content = file.read()
 
-        if "OggS" in file_content or "WAVE" in file_content:
-            if "OggS" in file_content:
-                new_file_path = os.path.join(extracted_assets_output_path, os.path.splitext(filename)[0] + ".ogg")
-                shutil.copyfile(file_path, new_file_path)
-                
-                print("Extracted OGG file.")
-            elif "WAVE" in file_content:
-                new_file_path = os.path.join(extracted_assets_output_path, os.path.splitext(filename)[0] + ".wav")
-                shutil.copyfile(file_path, new_file_path)
-                
-                print("Extracted WAV file.")
+        if "OggS" in file_content:
+            new_file_path = os.path.join(extracted_assets_output_path, os.path.splitext(filename)[0] + ".ogg")
+            shutil.copyfile(file_path, new_file_path)
+            
+            print("Extracted OGG file.")
+        elif "WAVE" in file_content:
+            new_file_path = os.path.join(extracted_assets_output_path, os.path.splitext(filename)[0] + ".wav")
+            shutil.copyfile(file_path, new_file_path)
+            
+            print("Extracted WAV file.")
 
 print("Done. Finished extracting all assets.")
