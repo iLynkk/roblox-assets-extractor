@@ -1,7 +1,7 @@
 # Roblox Assets Extractors
- This Python script extracts cached assets such as Images (PNG), Audios (OGG or WAV) and RBXM (may include Animations) from your computer.
+ This Python script extracts cached assets such as Images (PNG), Audios (OGG or WAV) and RBXM (may include Animations) from your computer. This script also prevents extracting duplicate assets.
 
- When you join a Roblox game, your client automatically caches images and audios in a temporary folder. You may want to clear that folder, which is located in `/AppData/Local/Temp/Roblox/http`, If you want to extract assets from a specific game.
+ When you join a Roblox game, your client automatically caches images and audios in a temporary folder. You may want to clear that folder, which is located in `%Temp%/Roblox/http`, If you want to extract assets from a specific game.
 
  If the `http` folder doesn't exist you must manually create it.
 
@@ -13,8 +13,7 @@
 - If you don't have Python, [install it](https://www.python.org/downloads/).
 - Download the `assets_extractor.py` file.
 - Open a Command Prompt, type: `pip install requests`
-- Edit the `assets_extractor.py` file, and change `YOUR_OUTPUT_PATH_FOR_EXTRACTED_ASSETS` to the path where you want the extracted files to be saved. (example: "/Downloads/ExtractedAssets/")
-- Edit the `assets_extractor.py` file, and change `YOUR_COMPUTER_NAME` to your current computer name. (example: "DaveComputer")
+- Edit the `assets_extractor.py` file, and change `YOUR_OUTPUT_PATH_FOR_EXTRACTED_ASSETS` to the path where you want the extracted files to be saved. (example: "Downloads/ExtractedAssets/")
 
 ### Executing
 - Copy the path where the `assets_extractor.py` file is downloaded.
