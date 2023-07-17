@@ -1,12 +1,15 @@
 import os
 import re
 import shutil
+import hashlib
 import requests
 
-home_directory = r"C:\Users\YOUR_COMPUTER_NAME\"
+home_directory = os.path.expanduser("~")
 roblox_cache_path = os.path.join(home_directory, 'AppData', 'Local', 'Temp', 'Roblox', 'http')
 roblox_sounds_cache_path = os.path.join(home_directory, 'AppData', 'Local', 'Temp', 'Roblox', 'sounds')
 extracted_assets_output_path = os.path.join(home_directory, 'YOUR_OUTPUT_PATH_FOR_EXTRACTED_ASSETS')
+
+already_extracted_assets = []
 
 if not os.path.exists(extracted_assets_output_path):
     print(f"The following path: {extracted_assets_output_path} doesn't exist! Creating it...")
@@ -30,7 +33,9 @@ for filename in os.listdir(roblox_cache_path):
                 response = requests.get(link)
                 linked_file_content = response.content.decode("latin-1")
 
-                if "<roblox!" in linked_file_content or "IHDR" in linked_file_content:
+                content_checksum = hashlib.md5(response.content).hexdigest()
+
+                if "<roblox!" in linked_file_content or "IHDR" in linked_file_content and not content_checksum in already_extracted_assets:
                     if "<roblox!" in linked_file_content:
                         file_extension = ".rbxm"
                         print("Extracted RBXM file.")
@@ -39,6 +44,7 @@ for filename in os.listdir(roblox_cache_path):
                         print("Extracted PNG file.")
 
                     with open(os.path.join(extracted_assets_output_path, f"{filename}{file_extension}"), "wb") as save_file:
+                        already_extracted_assets.append(content_checksum)
                         save_file.write(response.content)
             except requests.exceptions.RequestException as e:
                 print(f"Error fetching asset: {link}. Error message: {str(e)}")
