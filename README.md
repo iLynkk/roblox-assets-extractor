@@ -11,6 +11,7 @@
 
 ### Setup
 - If you don't have Python, [install it](https://www.python.org/downloads/).
+- Download the `assets_extractor.py` file.
 - Open a Command Prompt, type: `pip install requests`
 - Edit the `assets_extractor.py` file, and change `YOUR_OUTPUT_PATH_FOR_EXTRACTED_ASSETS` to the path where you want the extracted files to be saved. (example: "/Downloads/ExtractedAssets/")
 
