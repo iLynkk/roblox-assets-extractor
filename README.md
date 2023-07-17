@@ -14,6 +14,7 @@
 - Download the `assets_extractor.py` file.
 - Open a Command Prompt, type: `pip install requests`
 - Edit the `assets_extractor.py` file, and change `YOUR_OUTPUT_PATH_FOR_EXTRACTED_ASSETS` to the path where you want the extracted files to be saved. (example: "/Downloads/ExtractedAssets/")
+- Edit the `assets_extractor.py` file, and change `YOUR_COMPUTER_NAME` to your current computer name. (example: "DaveComputer")
 
 ### Executing
 - Copy the path where the `assets_extractor.py` file is downloaded.
