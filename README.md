@@ -1,6 +1,8 @@
 # Roblox Assets Extractors
  This Python script extracts cached assets such as Images (PNG), Audios (OGG or WAV) and RBXM (may include Animations) from your computer.
+
  When you join a Roblox game, your client automatically caches images and audios in a temporary folder. You may want to clear that folder, which is located in `/AppData/Local/Temp/Roblox/http`, If you want to extract assets from a specific game.
+
  If the `http` folder doesn't exist you must manually create it.
 
 ## Requirements
