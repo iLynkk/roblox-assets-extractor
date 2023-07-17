@@ -21,6 +21,6 @@
 - Open a new Command Prompt and type: `cd PATH_HERE` and change `PATH_HERE` to the copied path.
 - Then type `python assets_extractor.py` and the script will be executing.
 
-**NOTE:** This script was made for the purpouse of checking which assets has been cached on your computer, because sometimes assets aren't cached and are missing in the Experience. Do not extract assets to infringe Intellectual Property or redistribute it, as that is agaisn't [Roblox Term's Of Service](https://en.help.roblox.com/hc/en-us/articles/115004647846).
+**NOTE:** This script was made for the purpouse of checking which assets has been cached on your computer, because sometimes assets aren't cached and are missing in the Experience. Do not extract assets to infringe Intellectual Property or redistribute it, as that is agaisn't [Roblox Terms Of Service](https://en.help.roblox.com/hc/en-us/articles/115004647846).
 
 **Recommended to use only on your OWN EXPERIENCES.**
